@@ -1,0 +1,26 @@
+{
+  "name": "iona-screensaver",
+  "version": "1.0.0",
+  "description": "Iona Locker Daemon",
+  "main": "server.js",
+  "dependencies": {
+    "iohook": "^0.1.9",
+    "keypress": "^0.2.1",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seshpenguin/iona.git"
+  },
+  "author": "Seshan Ravikumar",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Seshpenguin/iona/issues"
+  },
+  "homepage": "https://github.com/Seshpenguin/iona#readme"
+}
