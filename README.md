@@ -15,7 +15,7 @@ Basically this repo consists of the various iona modules that make up iona GNU+L
 
 So yea... let's see how far this gets! :tada:
 
-You can see the priject status [here](https://github.com/Seshpenguin/iona/projects).
+You can see the project status [here](https://github.com/Seshpenguin/iona/projects).
 
 ## Timeline
 Not even close (╯°□°）╯︵ ┻━┻
