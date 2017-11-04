@@ -1,0 +1,26 @@
+{
+  "name": "transcode-service",
+  "version": "1.0.0",
+  "description": "Iona Realtime Transcoding Service",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "get-video-duration": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seshpenguin/iona.git"
+  },
+  "author": "Seshan Ravikumar",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Seshpenguin/iona/issues"
+  },
+  "homepage": "https://github.com/Seshpenguin/iona#readme"
+}

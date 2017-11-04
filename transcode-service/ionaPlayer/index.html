@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>ionaPlayer</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <style>
+        /*Chrome*/
+
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            input[type='range'] {
+                overflow: hidden;
+                width: 80px;
+                -webkit-appearance: none;
+                background-color: #E0E0E0;
+            }
+
+            input[type='range']::-webkit-slider-runnable-track {
+                height: 10px;
+                -webkit-appearance: none;
+                color: #13bba4;
+                margin-top: -1px;
+            }
+
+            input[type='range']::-webkit-slider-thumb {
+                width: 10px;
+                -webkit-appearance: none;
+                height: 10px;
+                cursor: ew-resize;
+                background: #434343;
+                box-shadow: -1000px 0 0 1000px #43e5f7;
+            }
+        }
+
+        video#ionaPlayer {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: 100% !important;
+            height: auto !important;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1000;
+        }
+
+        .blur {
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+            z-index: -99;
+            position: fixed;
+            width: 1000px;
+            height: 35px;
+            background-size: cover;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="ionaPlayer" autoplay playsinline>
+        <source src="http://localhost:8081/video/video.mp4/0" type="video/webm"> Something went wrong. Iona wasn't able to play the Video. :(
+    </video>
+    <br />
+    <div>
+        <div class="blur"></div>
+        <input type="range" id="videoProgress" value="90" style="width: 100%" onchange="seekVideo()"> <br />
+        <button onclick="playVideo()" type="button">Play/Pause</button> <button onclick="seek10s()" type="button">Skip 10 seconds</button>
+    </div>
+</body>
+<script>
+    var maxDuration = 0.0;
+    jQuery.getJSON('http://localhost:8081/videometa/video.mp4', function (data) {
+        console.log(JSON.stringify(data.duration));
+        maxDuration = parseInt(JSON.stringify(data.duration));
+    });
+    var playerProgress = document.getElementById("videoProgress");
+    playerProgress.max = 10;
+    //Video Timer
+    var currTime = 0;
+    var isPlaying = true;
+    setInterval(function () {
+        if (isPlaying) {
+            if (currTime == maxDuration) {
+                isPlaying = false;
+            }
+            currTime++;
+            console.log(currTime);
+            console.log(maxDuration);
+            playerProgress.max = maxDuration;
+            playerProgress.value = currTime;
+
+        }
+    }, 1000);
+
+    var ionaPlayer = document.getElementById("ionaPlayer");
+
+
+    function seek10s() {
+        //console.log(ionaPlayer.currentTime)
+        var newTime = currTime + 10;
+        ionaPlayer.src = "http://localhost:8081/video/video.mp4/" + newTime;
+        currTime = newTime;
+        //ionaPlayer.play();
+    }
+    function playVideo() {
+        if (isPlaying == false) {
+            isPlaying = true;
+            ionaPlayer.play();
+        } else {
+            isPlaying = false;
+            ionaPlayer.pause();
+        }
+    }
+    function seekVideo() {
+        currTime = playerProgress.value;
+        ionaPlayer.src = "http://localhost:8081/video/video.mp4/" + currTime;
+        isPlaying = true;
+    }
+</script>
+
+</html>
