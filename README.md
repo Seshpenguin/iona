@@ -17,5 +17,13 @@ So yea... let's see how far this gets! :tada:
 
 You can see the project status [here](https://github.com/Seshpenguin/iona/projects).
 
+## Where is the actual distro?
+As you may have noticed, this repo only contains the iona modules! Where's the distro, you ask? **On my computer!**
+
+At the time of writings, i'm working on the distro in a VM. I *would* put the VM here, but it's over 15GB in size so...
+
+You can check out the [wiki](https://github.com/Seshpenguin/iona/wiki) on how to spin up your own VM!
+
+
 ## Timeline
-Not even close (╯°□°）╯︵ ┻━┻
+Not even close to ready (╯°□°）╯︵ ┻━┻
