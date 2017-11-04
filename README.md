@@ -2,7 +2,7 @@
 # Welcome to iona
 Smart Home Server GNU+Linux
 ## What is it?!
-This version of iona (known internally as "Feature-Complete Iona") is a GNU+Linux distro that will combine all the core features of the (eventually-to-be-released) iona-next (a combined OS+Hardware product with a custom gui yada yada)...
+This version of iona (known internally as "Feature-Complete Iona" or FCIona) is a GNU+Linux distro that will combine all the core features of the (eventually-to-be-released) iona-next (a combined OS+Hardware product with a custom gui yada yada)...
 
 Basically this repo consists of the various iona modules that make up iona GNU+Linux. Iona will have the follow features:
 - [x] Traditional DE (ex. KDE, Budgie, etc) w/ standard desktop apps (FireFox, etc)
@@ -14,6 +14,8 @@ Basically this repo consists of the various iona modules that make up iona GNU+L
 - [ ] AND MORE!!!
 
 So yea... let's see how far this gets! :tada:
+
+You can see the priject status [here](https://github.com/Seshpenguin/iona/projects).
 
 ## Timeline
 Not even close (╯°□°）╯︵ ┻━┻
