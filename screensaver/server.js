@@ -92,7 +92,7 @@ function dontLock() {
 function lock() {
     if (!islocked) {
         console.log("Locking screen...");
-        exec('echo this is would be the command', (err, stdout, stderr) => {
+        exec(lockCommand, (err, stdout, stderr) => {
             if (err) {
                 // node couldn't execute the command
                 return;
