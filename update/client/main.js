@@ -39,10 +39,7 @@ function createWindow() {
 
   tray = new Tray('./icon.png')
   const contextMenu = Menu.buildFromTemplate([
-    { label: 'Iona Update Services', type: 'label' },
-    { label: 'Item2', type: 'radio' },
-    { label: 'Item3', type: 'radio', checked: true },
-    { label: 'Item4', type: 'radio' }
+    { label: 'Iona Update Services', type: 'radio', checked: true }
   ])
   tray.setToolTip('This is my application.')
   tray.setContextMenu(contextMenu)

@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Iona Update</title>
+  <title>Iona Updates</title>
+  <script>
+    // node modules
+    
+  </script>
 </head>
 
 <body>
@@ -20,6 +24,16 @@
     webview.addEventListener('console-message', (e) => {
       console.log('Guest page logged a message:', e.message)
     })
+    function updateNotif() {
+      let myNotification = new Notification('Iona Update Services', {
+        body: 'An update is ready to be installed.'
+      })
+
+      myNotification.onclick = () => {
+        console.log('Notification clicked')
+      }
+    }
+    updateNotif();
   </script>
 </body>
 
